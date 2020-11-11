@@ -16,7 +16,6 @@ ul {
   
   li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -44,8 +43,9 @@ ul {
   }
 
   .logo{
+    font-weight: bold;
+    
     text-align: center;
-    color: purple;
     padding: 14px 16px;
     text-decoration: none;
   }
@@ -54,5 +54,10 @@ ul {
   .phone{
     align-self: center;
     font-size: 1.2rem;
-     }
+  }
+  a {
+    font-style:italic;
+    color: #f380d5;
+    text-decoration: none;
+  }
 
