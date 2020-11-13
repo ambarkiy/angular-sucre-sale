@@ -1,11 +1,20 @@
 <div class="vh-100">
   <nav class="sticky">
-    <app-top-navigation [logo]="logo" [address]="address"[links]="links"></app-top-navigation>
+    <app-top-navigation
+      [logo]="logo"
+      [address]="address"
+      [links]="links"
+    ></app-top-navigation>
   </nav>
   <main class="content">
-    <app-dish-viewer></app-dish-viewer>
+    <app-dish-viewer [dishesGroups]="dishesGroups"></app-dish-viewer>
   </main>
   <footer class="footer">
-    <app-footer></app-footer>
+    <app-footer
+      [adminLinks]="adminLinks"
+      [links]="links"
+      [socialLinks]="socialLinks"
+      [address]="address"
+    ></app-footer>
   </footer>
 </div>

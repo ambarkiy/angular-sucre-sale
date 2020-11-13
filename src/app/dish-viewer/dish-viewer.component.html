@@ -1,164 +1,17 @@
-<section id="assiettes">
-  <h1>Assiettes</h1>
+<section *ngFor="let dishesGroup of dishesGroups" [id]="dishesGroup.groupName | lowercase">
+  <h1>{{ dishesGroup.groupName | titlecase}}</h1>
   <div class="container">
-    <div class="card">
+    <div class="card" *ngFor="let dish of dishesGroup.dishes">
       <div class="card-header">
-        <div class="dish-title">Grec</div>
-        <div class="dish-price">5€50</div>
+        <div class="dish-title">{{dish.name}}</div>
+        <div class="dish-price">{{dish.price}}</div>
       </div>
       <div class="card-img">
-        <img src="assets/dish/frite.svg" width="70%" />
+        <img [src]="dish.img" width="70%" />
       </div>
       <div class="card-content">
-        <span> Viandes Kebab servi avec fites, salade et sauces au choix </span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <div class="dish-title">Grec</div>
-        <div class="dish-price">5€50</div>
-      </div>
-      <div class="card-img">
-        <img src="assets/dish/frite.svg" width="70%" />
-      </div>
-      <div class="card-content">
-        <span> Viandes Kebab servi avec fites, salade et sauces au choix </span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <div class="dish-title">Grec</div>
-        <div class="dish-price">5€50</div>
-      </div>
-      <div class="card-img">
-        <img src="assets/dish/frite.svg" width="70%" />
-      </div>
-      <div class="card-content">
-        <span> Viandes Kebab servi avec fites, salade et sauces au choix </span>
+        <span>{{dish.composition}}</span>
       </div>
     </div>
   </div>
 </section>
-<section id="pizzas">
-    <h1>Pizzas</h1>
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Napolitaine</div>
-          <div class="dish-price">7€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/pizza.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Mozarella, base tomate, anchoix</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Végétarienn</div>
-          <div class="dish-price">8€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/pizza.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Mozarella, base tomate, artichauts, tomates, champignons, aubergines</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Savoyarde</div>
-          <div class="dish-price">7€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/pizza.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span> Mozarella, base crème fraîche, jambon de dinde, pommes de terre</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="sandwichs">
-    <h1>Sandwichs</h1>
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Sandwich</div>
-          <div class="dish-price">5€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/frite.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Sandwich servi avec fites, salade et sauces au choix </span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Sandwich</div>
-          <div class="dish-price">5€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/frite.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Sandwich servi avec fites, salade et sauces au choix </span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Sandwich</div>
-          <div class="dish-price">5€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/frite.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Sandwich servi avec fites, salade et sauces au choix </span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="tacos">
-    <h1>Tacos</h1>
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Tacos</div>
-          <div class="dish-price">5€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/frite.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Tacos servi avec fites, salade et sauces au choix </span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Tacos</div>
-          <div class="dish-price">5€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/frite.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Tacos servi avec fites, salade et sauces au choix </span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="dish-title">Tacos</div>
-          <div class="dish-price">5€50</div>
-        </div>
-        <div class="card-img">
-          <img src="assets/dish/frite.svg" width="70%" />
-        </div>
-        <div class="card-content">
-          <span>Tacos servi avec fites, salade et sauces au choix </span>
-        </div>
-      </div>
-    </div>
-  </section>
