@@ -1,26 +1,23 @@
 <div class="container">
   <div class="logo">
-    <a href="#assiettes">Sucré Salé</a>
+    <a href="#assiettes">{{logo}}</a>
   </div>
   <div>
     <ul>
-      <li><a href="#assiettes">ASSIETTES</a></li>
-      <li><a href="#pizzas">PIZZAS</a></li>
-      <li><a href="#sandwichs">SANDWICHS</a></li>
-      <li><a href="#tacos">TACOS</a></li>
+      <li *ngFor="let link of links"><a href="{{link.href}}">{{link.name}}</a></li>
     </ul>
   </div>
   <div>
     <address>
       <div>
-        Sucré Salé,
+        {{address.name}},
         <br />
-        8 pl 3 Rois,
+        {{address.street}},
         <br />
-        60180 NOGENT SUR OISE
+        {{address.zip}} {{address.city}}
       </div>
       <div class="phone">
-        <a href="tel:+33344530517">03 44 53 05 17</a>
+        <a href="tel:{{address.phone}}">{{address.phone}}</a>
       </div>
     </address>
   </div>
