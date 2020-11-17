@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { DishViewerComponent } from './dish-viewer/dish-viewer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { DishViewerComponent } from './dish-viewer/dish-viewer.component';
     DishViewerComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

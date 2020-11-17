@@ -1,24 +1,32 @@
-<div class="container">
-  <div class="logo">
-    <a href="#assiettes">{{logo}}</a>
-  </div>
-  <div>
-    <ul>
-      <li *ngFor="let link of links"><a href="{{link.href}}">{{link.name}}</a></li>
-    </ul>
-  </div>
-  <div>
-    <address>
-      <div>
-        {{address.name}},
-        <br />
-        {{address.street}},
-        <br />
-        {{address.zip}} {{address.city}}
+<mat-toolbar color="primary">
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-around center" class="mat-elevation-z2">
+    <div>
+      <span href="#assiettes">{{ logo }}</span>
+    </div>
+    <div fxLayoutGap="1rem">
+      <ng-container *ngFor="let link of links">
+        <a href="{{ link.href }}" mat-raised-button color="accent">{{
+          link.name
+        }}</a>
+      </ng-container>
+    </div>
+    <div fxLayout="row" fxLayoutGap="1rem">
+      <div fxLayoutAlign="center center">
+        <mat-icon>home</mat-icon>
       </div>
-      <div class="phone">
-        <a href="tel:{{address.phone}}">{{address.phone}}</a>
+      <address class="mat-caption">
+        <div>
+          {{ address.name }}
+          <br />
+          {{ address.street }}
+          <br />
+          {{ address.zip }} {{ address.city }}
+        </div>
+      </address>
+      <div fxLayoutAlign="center center">
+        <mat-icon>phone</mat-icon>
+        <span>{{address.phone}}</span>
       </div>
-    </address>
+    </div>
   </div>
-</div>
+</mat-toolbar>

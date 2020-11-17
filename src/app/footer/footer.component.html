@@ -1,31 +1,36 @@
-<nav class="container">
-  <ul>
-    <li *ngFor="let link of adminLinks">
-      <a href="{{ link.href }}">{{ link.name }}</a>
-    </li>
-  </ul>
-  <ul>
-    <li *ngFor="let link of links">
-      <a href="{{ link.href }}">{{ link.name }}</a>
-    </li>
-  </ul>
-  <ul>
-    <li *ngFor="let link of socialLinks">
-      <a href="{{ link.href }}">{{ link.name }}</a>
-    </li>
-  </ul>
-  <div>
-    <address>
-      <div>
-        {{ address.name }},
-        <br />
-        {{ address.street }},
-        <br />
-        {{ address.zip }} {{ address.city }}
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-around start">
+    <div fxLayout="column" >
+      <ng-container *ngFor="let link of adminLinks">
+        <a mat-flat-button color="primary" href="{{ link.href }}">{{ link.name }}</a>
+      </ng-container>
+    </div>
+    <div fxLayout="column">
+      <ng-container *ngFor="let link of links">
+        <a mat-flat-button color="primary" href="{{ link.href }}">{{ link.name }}</a>
+      </ng-container>
+    </div>
+    <div fxLayout="column">
+      <ng-container *ngFor="let link of socialLinks">
+        <a mat-flat-button color="primary" href="{{ link.href }}">{{ link.name }}</a>
+      </ng-container>
+    </div>
+    <div class="text-white" fxLayout="row" fxLayoutGap="1rem" >
+      <div fxLayoutAlign="center center">
+        <mat-icon>home</mat-icon>
       </div>
-      <div class="phone">
-        <a href="tel:{{ address.phone }}">{{ address.phone }}</a>
+      <address class="mat-caption">
+        <div>
+          {{ address.name }}
+          <br />
+          {{ address.street }}
+          <br />
+          {{ address.zip }} {{ address.city }}
+        </div>
+      </address>
+      <div fxLayoutAlign="center center">
+        <mat-icon>phone</mat-icon>
+        <span>{{address.phone}}</span>
       </div>
-    </address>
+    </div>
   </div>
-</nav>
+

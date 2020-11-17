@@ -1,7 +1,12 @@
+html,
 body {
-  margin: 0px;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.test {
+  border: solid red 1px;
+}

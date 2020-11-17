@@ -1,20 +1,28 @@
-<div class="vh-100">
-  <nav class="sticky">
-    <app-top-navigation
-      [logo]="logo"
-      [address]="address"
-      [links]="links"
-    ></app-top-navigation>
-  </nav>
-  <main class="content">
-    <app-dish-viewer [dishesGroups]="dishesGroups"></app-dish-viewer>
-  </main>
-  <footer class="footer">
-    <app-footer
-      [adminLinks]="adminLinks"
-      [links]="links"
-      [socialLinks]="socialLinks"
-      [address]="address"
-    ></app-footer>
-  </footer>
-</div>
+<nav class="sticky">
+  <app-top-navigation
+    [logo]="logo"
+    [address]="address"
+    [links]="links"
+  ></app-top-navigation>
+</nav>
+<main class="content">
+  <app-dish-viewer [dishesGroups]="dishesGroups"></app-dish-viewer>
+  <div class="bottom-right">
+    <a
+      mat-fab
+      color="accent"
+      aria-label="Example icon button with a delete icon"
+      href="tel:{{ address.phone }}"
+    >
+      <mat-icon>phone</mat-icon>
+    </a>
+  </div>
+</main>
+<footer class="footer">
+  <app-footer
+    [adminLinks]="adminLinks"
+    [links]="links"
+    [socialLinks]="socialLinks"
+    [address]="address"
+  ></app-footer>
+</footer>
