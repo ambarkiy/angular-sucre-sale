@@ -1,20 +1,35 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CguComponent } from './features/cgu/cgu.component';
-import { CgvComponent } from './features/cgv/cgv.component';
-import { MenuComponent } from './features/menu/menu.component';
-import { NotFoundComponent } from './features/not-found/not-found.component';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes = [
-  { pathMatch: 'full', path: '', redirectTo: 'menu' },
-  { path: 'menu', component: MenuComponent },
-  { path: 'cgu', component: CguComponent },
-  { path: 'cgv', component: CgvComponent },
-  { path: '**', component: NotFoundComponent },
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: '/menu' },
+  {
+    path: 'menu',
+    loadChildren: () =>
+      import('./features/menu/menu.module').then((m) => m.MenuModule),
+  },
+
+  {
+    path: 'cgu',
+    loadChildren: () =>
+      import('./features/cgu/cgu.module').then((m) => m.CguModule),
+  },
+  {
+    path: 'cgv',
+    loadChildren: () =>
+      import('./features/cgv/cgv.module').then((m) => m.CgvModule),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./features/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

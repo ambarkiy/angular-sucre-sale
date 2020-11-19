@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     this.address = this.restaurantService.getAddress();
     this.links = this.dishService.get().sections.map((section) => ({
       name: section.name,
-      href: `#${section.name.toLowerCase()}`,
+      href: `/menu#${section.name.toLowerCase()}`,
     }));
     this.adminLinks = this.restaurantService.getAdminLinks();
     this.socialLinks = this.restaurantService.getSocialLinks();
