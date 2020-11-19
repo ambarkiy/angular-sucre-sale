@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ menuItem.name }}</mat-card-title>
+    <mat-card-subtitle>{{ menuItem.price }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="menuItem.img" />
+  <mat-card-content>
+    <p>{{ menuItem.composition }}</p>
+  </mat-card-content>
+</mat-card>

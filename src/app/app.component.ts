@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Address } from './model/address';
-import { DishesGroup } from './model/dish';
-import { DishCategory } from './model/dish-category';
-import { Link } from './model/link';
-import { DishService } from './service/dish.service';
-import { RestaurantService } from './service/restaurant.service';
+import { Address } from 'src/domain/models/address';
+import { Link } from 'src/domain/models/link';
+import { MenuService } from 'src/domain/services/menu.service';
+import { RestaurantService } from 'src/domain/services/restaurant.service';
+
 
 @Component({
   selector: 'app-root',
@@ -18,20 +17,18 @@ export class AppComponent implements OnInit {
   links: Link[];
   adminLinks: Link[];
   socialLinks: Link[];
-  dishesGroups: DishesGroup[];
 
   constructor(
-    private dishService: DishService,
+    private dishService: MenuService,
     private restaurantService: RestaurantService
   ) {}
 
   ngOnInit(): void {
     this.logo = 'Sucré Salé';
-    this.dishesGroups = this.dishService.getDishesGroups();
     this.address = this.restaurantService.getAddress();
-    this.links = this.dishesGroups.map((dishesGroup) => ({
-      name: dishesGroup.groupName,
-      href: `#${dishesGroup.groupName.toLowerCase()}`,
+    this.links = this.dishService.get().sections.map((section) => ({
+      name: section.name,
+      href: `#${section.name.toLowerCase()}`,
     }));
     this.adminLinks = this.restaurantService.getAdminLinks();
     this.socialLinks = this.restaurantService.getSocialLinks();

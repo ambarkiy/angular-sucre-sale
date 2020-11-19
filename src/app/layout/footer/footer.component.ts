@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Address } from '../model/address';
-import { Link } from '../model/link';
+import { Address } from 'src/domain/models/address';
+import { Link } from 'src/domain/models/link';
+
 
 @Component({
   selector: 'app-footer',

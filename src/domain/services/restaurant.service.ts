@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Address } from '../model/address';
-import { Link } from '../model/link';
+import { Address } from '../models/address';
+import { Link } from '../models/link';
+
 
 @Injectable({
   providedIn: 'root',

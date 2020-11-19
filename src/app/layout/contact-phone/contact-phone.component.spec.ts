@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DishViewerComponent } from './dish-viewer.component';
+import { ContactPhoneComponent } from './contact-phone.component';
 
-describe('DishViewerComponent', () => {
-  let component: DishViewerComponent;
-  let fixture: ComponentFixture<DishViewerComponent>;
+describe('ContactPhoneComponent', () => {
+  let component: ContactPhoneComponent;
+  let fixture: ComponentFixture<ContactPhoneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DishViewerComponent ]
+      declarations: [ ContactPhoneComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DishViewerComponent);
+    fixture = TestBed.createComponent(ContactPhoneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,8 @@
+<section *ngFor="let section of menu.sections" [id]="section.name | lowercase">
+  <h1>{{ section.name | titlecase }}</h1>
+  <div class="container">
+    <ng-container *ngFor="let menuItem of section.items">
+      <app-menu-item [menuItem]="menuItem" fxLayoutAlign=" stretch"></app-menu-item>
+    </ng-container>
+  </div>
+</section>
