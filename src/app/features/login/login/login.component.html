@@ -2,16 +2,23 @@
   <form [formGroup]="loginForm" fxLayout="column" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Identifiant</mat-label>
-      <input matInput formControlName="username" />
+      <input matInput formControlName="username" required />
+      <mat-error *ngIf="errorHandling('username', 'required')">
+        <strong>Identifiant obligatoire</strong>
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Mot de passe</mat-label>
-      <input matInput formControlName="password" />
+      <input matInput formControlName="password" required />
+      <mat-error *ngIf="errorHandling('password', 'required')">
+        <strong>Mot de Passe obligatoire</strong>
+      </mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary">CONNEXION <mat-icon>login</mat-icon></button>
+    <button mat-raised-button color="primary" [disabled]="!loginForm.valid">
+      CONNEXION <mat-icon>login</mat-icon>
+    </button>
     <mat-error *ngIf="isLogged === false"
       >Identifiant ou Mot de passe incorrecte</mat-error
     >
   </form>
 </div>
-

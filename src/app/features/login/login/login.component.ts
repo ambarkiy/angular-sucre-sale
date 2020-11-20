@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/domain/services/user.service';
 
@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   // });
 
   loginForm = this.fb.group({
-    username: [''],
-    password: [''],
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
   isLogged: boolean;
@@ -37,5 +37,9 @@ export class LoginComponent implements OnInit {
     if (this.isLogged) {
       this.router.navigate(['/admin']);
     }
+  }
+
+  public errorHandling(control: string, error: string) {
+    return this.loginForm.controls[control].hasError(error);
   }
 }
