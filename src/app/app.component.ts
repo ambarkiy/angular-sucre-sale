@@ -4,7 +4,6 @@ import { Link } from 'src/domain/models/link';
 import { MenuService } from 'src/domain/services/menu.service';
 import { RestaurantService } from 'src/domain/services/restaurant.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

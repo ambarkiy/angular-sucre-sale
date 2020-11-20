@@ -1,21 +1,23 @@
-<nav class="sticky">
-  <app-top-navigation
-    [logo]="logo"
-    [address]="address"
-    [links]="links"
-  ></app-top-navigation>
-</nav>
-<main class="content">
-  <router-outlet></router-outlet>
-  <div class="bottom-right">
-    <app-contact-phone></app-contact-phone>
-  </div>
-</main>
-<footer class="footer">
-  <app-footer
-    [adminLinks]="adminLinks"
-    [links]="links"
-    [socialLinks]="socialLinks"
-    [address]="address"
-  ></app-footer>
-</footer>
+<div class="vh-100" fxLayout="column">
+  <nav class="sticky">
+    <app-top-navigation
+      [logo]="logo"
+      [address]="address"
+      [links]="links"
+    ></app-top-navigation>
+  </nav>
+  <main fxFlex fxLayoutAlign="center stretch">
+    <router-outlet></router-outlet>
+    <div class="bottom-right">
+      <app-contact-phone></app-contact-phone>
+    </div>
+  </main>
+  <footer class="footer">
+    <app-footer
+      [adminLinks]="adminLinks"
+      [links]="links"
+      [socialLinks]="socialLinks"
+      [address]="address"
+    ></app-footer>
+  </footer>
+</div>
